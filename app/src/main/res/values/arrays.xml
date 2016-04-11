@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tabs">
+        <item>头条</item>
+        <item>百科</item>
+        <item>资讯</item>
+        <item>经营</item>
+        <item>数据</item>
+    </string-array>
+</resources>
