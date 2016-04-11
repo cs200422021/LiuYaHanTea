@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private void exit() {
         //通过当前系统时间与存储的点击时间判断点击间隔
         if ((System.currentTimeMillis() - exitTime)>2000){
-            Toast.makeText(MainActivity.this, "再次点击返回键退出", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();
             exitTime = System.currentTimeMillis();
         }else {
             finish();
