@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             TabFragment tabFragment = TabFragment.newInstance(tabs[i]);
             fragments.add(tabFragment);
         }
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
         newsViewPager.setAdapter(adapter);
 
         // TabLayout绑定ViewPager
