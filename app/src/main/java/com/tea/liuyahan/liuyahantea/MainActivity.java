@@ -8,12 +8,17 @@ public class MainActivity extends AppCompatActivity {
     //声明用来记录两次退出点击时间
     private long exitTime = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+
+        
     }
+
+
 
     @Override
     public void onBackPressed() {
