@@ -55,18 +55,18 @@ public class NewsFragmentAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        if (position != 0) {
-            holder.titleTextView.setText(datas.get(position).getTitle());
-            if (datas.get(position).getDescription() != null) {
-                holder.descTextView.setText(datas.get(position).getDescription());
-            } else {
-                holder.descTextView.setText(" ");
-            }
-            holder.infosTextView.setText(datas.get(position).getSource() + "  " + datas.get(position).getNickname() + "  " + datas.get(position).getCreate_time());
-            // 异步加载图片
-            String imgUrl = datas.get(position).getWap_thumb();
-            downloadImage(imgUrl, holder.iconImageView);
+
+        holder.titleTextView.setText(datas.get(position).getTitle());
+        if (datas.get(position).getDescription() != null) {
+            holder.descTextView.setText(datas.get(position).getDescription());
+        } else {
+            holder.descTextView.setText(" ");
         }
+        holder.infosTextView.setText(datas.get(position).getSource() + "  " + datas.get(position).getNickname() + "  " + datas.get(position).getCreate_time());
+        // 异步加载图片
+        String imgUrl = datas.get(position).getWap_thumb();
+        downloadImage(imgUrl, holder.iconImageView);
+
         return convertView;
     }
 
