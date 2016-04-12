@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -160,7 +159,6 @@ public class TabFragment extends Fragment implements AbsListView.OnScrollListene
             url = CHANNEL_URL + TYPE_DATA + PAGE + pageFiveNum;
         }
 
-        Log.d("1542liu", url);
         downloadJson(url);
     }
 }

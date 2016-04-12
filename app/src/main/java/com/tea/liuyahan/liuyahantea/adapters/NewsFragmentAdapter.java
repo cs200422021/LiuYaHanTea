@@ -79,7 +79,11 @@ public class NewsFragmentAdapter extends BaseAdapter {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        iconImageView.setImageBitmap(bitmap);
+                        if (bitmap!=null) {
+                            iconImageView.setImageBitmap(bitmap);
+                        } else {
+                            iconImageView.setVisibility(ImageView.GONE);
+                        }
                     }
                 });
             }
