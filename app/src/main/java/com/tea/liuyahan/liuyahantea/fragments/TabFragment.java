@@ -15,6 +15,15 @@ public class TabFragment extends Fragment {
     private String tab;
     private TextView tabTextView;
     private ListView newsListView;
+    //地址相关
+    private static final String BASE_URL = "http://sns.maimaicha.com/api?apikey=b4f4ee31a8b9acc866ef2afb754c33e6&format=json&method=";
+    // 分页
+    public static final String PAGE = "&page=";
+    //首页幻灯片数据路径
+    public static final String HOME_URL = BASE_URL + "news.getSlideshow";
+    //头条数据
+    public static final String HEADLINE_URL = BASE_URL + "news.getHeadlines";
+
 
     public static TabFragment newInstance(String tab) {
         Bundle args = new Bundle();
