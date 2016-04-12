@@ -1,10 +1,12 @@
-package com.tea.liuyahan.liuyahantea;
+package com.tea.liuyahan.liuyahantea.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.tea.liuyahan.liuyahantea.R;
 
 public class DefaultActivity extends AppCompatActivity {
 

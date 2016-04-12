@@ -1,4 +1,4 @@
-package com.tea.liuyahan.liuyahantea;
+package com.tea.liuyahan.liuyahantea.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

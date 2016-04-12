@@ -1,4 +1,4 @@
-package com.tea.liuyahan.liuyahantea;
+package com.tea.liuyahan.liuyahantea.adapters;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
