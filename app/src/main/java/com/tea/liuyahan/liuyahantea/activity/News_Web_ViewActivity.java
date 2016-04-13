@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.tea.liuyahan.liuyahantea.R;
@@ -71,5 +73,9 @@ public class News_Web_ViewActivity extends AppCompatActivity {
                 handler.sendMessage(message);
             }
         }).start();
+    }
+
+    public void saveAll(View view){
+        Toast.makeText(this,"装作收藏了，稍后添加功能",Toast.LENGTH_SHORT).show();
     }
 }
