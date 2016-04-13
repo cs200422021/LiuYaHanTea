@@ -1,5 +1,6 @@
 package com.tea.liuyahan.liuyahantea.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.tea.liuyahan.liuyahantea.R;
+import com.tea.liuyahan.liuyahantea.activity.News_Web_ViewActivity;
 import com.tea.liuyahan.liuyahantea.adapters.NewsFragmentAdapter;
 import com.tea.liuyahan.liuyahantea.entity.TeaInfoEntity;
 import com.tea.liuyahan.liuyahantea.utils.MyHttpUtils;
@@ -21,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TabFragment extends Fragment implements AbsListView.OnScrollListener {
+public class TabFragment extends Fragment implements AbsListView.OnScrollListener, AdapterView.OnItemClickListener {
     private String tab;
     private TextView tabTextView;
     private ListView newsListView;
@@ -47,6 +50,8 @@ public class TabFragment extends Fragment implements AbsListView.OnScrollListene
     public static final String CHANNEL_URL = BASE_URL + "news.getListByType&row=15&type=";
     public static String URL;
     private boolean isScrollToBottom;
+    //内容详情页，id为对应文章id，主界面Json数据中获取
+    public static final String DETAIL_URL = BASE_URL + "news.getNewsContent&id=";
 
 
     //接收数据的
@@ -90,6 +95,7 @@ public class TabFragment extends Fragment implements AbsListView.OnScrollListene
         adapter = new NewsFragmentAdapter(getActivity(), datas, handler);
         newsListView.setAdapter(adapter);
         newsListView.setOnScrollListener(this);
+        newsListView.setOnItemClickListener(this);
         // 下载网络数据
         if ("头条".equals(tab)) {
             URL = HEADLINE_URL + PAGE;
@@ -160,5 +166,14 @@ public class TabFragment extends Fragment implements AbsListView.OnScrollListene
         }
 
         downloadJson(url);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(getActivity(), News_Web_ViewActivity.class);
+        String newsId = datas.get(position).getId();
+        String newsUrl = DETAIL_URL + newsId;
+        intent.putExtra("newsUrl", newsUrl);
+        startActivity(intent);
     }
 }

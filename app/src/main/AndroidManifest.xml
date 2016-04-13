@@ -19,7 +19,8 @@
         </activity>
         <activity android:name=".activity.GuidActivity" />
         <activity android:name=".activity.MainActivity" />
-        <activity android:name=".TabFragmentActivity"></activity>
+        <activity android:name=".TabFragmentActivity" />
+        <activity android:name=".activity.News_Web_ViewActivity"></activity>
     </application>
 
 </manifest>
